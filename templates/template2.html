@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Template 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .resume {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            background-color: #32CD32;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .contact-info {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .profile-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #32CD32;
+        }
+        .section-content {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="header">
+            <div class="name">{{FULL_NAME}}</div>
+            <div class="contact-info">
+                Email: {{EMAIL}} | Phone: {{PHONE}}
+            </div>
+            <img src="{{PROFILEIMAGESRC}}" alt="Profile Image" class="profile-image">
+        </div>
+
+        <div class="section">
+            <div class="section-title">Summary</div>
+            <div class="section-content">
+                {{SUMMARY}}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Work Experience</div>
+            <div class="section-content">
+                <p><strong>{{JOBTITLE1}}</strong> - {{COMPANY1}}</p>
+                <p>{{JOBDESCRIPTION1}}</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="section-content">
+                <p><strong>{{DEGREE1}}</strong> - {{UNIVERSITY1}}</p>
+                <p>Graduation Year: {{GRADUATIONYEAR1}}</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <div class="section-content">
+                {{SKILLS}}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Certifications</div>
+            <div class="section-content">
+                {{CERTIFICATIONS}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
