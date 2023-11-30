@@ -82,27 +82,17 @@ profileImageInput.addEventListener('change', function () {
     
 });
 
-document.getElementById('printBtn').addEventListener('click', function () {
-    
+document.getElementById('downloadBtn').addEventListener('click', function () {
+    // Get the resume preview container
     var resumePreview = document.getElementById('resumePreview');
 
-    
-    var printWindow = window.open('', '_blank');
-
-     
-    printWindow.document.write('<html><head><title>Print Resume</title>');
-
-   
-    printWindow.document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-
-    printWindow.document.write('</head><body>');
-    printWindow.document.write('<h1>Printed Resume</h1>');
-    printWindow.document.write(resumePreview.innerHTML);
-    printWindow.document.write('</body></html>');
-    printWindow.document.close();
-
-    
-    printWindow.print();
-    printWindow.close();
+    // Use html2pdf library to generate a PDF from the resume preview
+    html2pdf(resumePreview, {
+        margin: 10,
+        filename: 'resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    });
 });
 
