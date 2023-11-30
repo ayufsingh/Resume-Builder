@@ -82,6 +82,28 @@ profileImageInput.addEventListener('change', function () {
     
 });
 
+document.getElementById('printBtn').addEventListener('click', function () {
+    // Get the resume preview container
+    var resumePreview = document.getElementById('resumePreview');
+
+    // Open a new window for printing
+    var printWindow = window.open('', '_blank');
+    
+    // Set the content of the new window to the resume preview HTML
+    printWindow.document.write('<html><head><title>Print Resume</title></head><body>');
+    printWindow.document.write('<h1>Printed Resume</h1>');
+    printWindow.document.write(resumePreview.innerHTML);
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+
+    // Trigger the print function
+    printWindow.print();
+    printWindow.close();
+});
+
+// Your existing JavaScript code
+
+// Add an event listener to the "Download as PDF" button
 document.getElementById('downloadBtn').addEventListener('click', function () {
     // Get the resume preview container
     var resumePreview = document.getElementById('resumePreview');
@@ -95,4 +117,6 @@ document.getElementById('downloadBtn').addEventListener('click', function () {
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     });
 });
+
+// Your remaining JavaScript code
 
